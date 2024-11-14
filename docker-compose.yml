@@ -1,0 +1,19 @@
+services:
+
+  database:
+    image: postgres:16
+    restart: always
+
+    environment:
+      POSTGRES_USER: ${DATABASE_USERNAME}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+      POSTGRES_DB: ${DATABASE_NAME_PREFIX}_development
+
+    ports:
+      - "${DATABASE_PORT}:${DATABASE_PORT}"
+
+    volumes:
+    - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
