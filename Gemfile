@@ -59,6 +59,9 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+
+  # Format ERB files with speed and precision [https://github.com/nebulab/erb-formatter]
+  gem "erb-formatter", "~> 0.7.3"
 end
 
 group :test do
