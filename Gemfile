@@ -54,6 +54,12 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+
+  # IDE tools for code completion, inline documentation, and static analysis [https://solargraph.org/]
+  gem "solargraph", "~> 0.50.0", group: :development
+
+  # Add reflection on ActiveModel dynamic attributes that will be created at runtime [https://github.com/iftheshoefritz/solargraph-rails]
+  gem "solargraph-rails", "~> 1.1", group: :development
 end
 
 group :development do
