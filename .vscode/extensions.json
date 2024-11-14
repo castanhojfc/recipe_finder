@@ -4,12 +4,12 @@
 		"robert.ruby-snippet",
 		"mkhl.direnv",
 		"ms-azuretools.vscode-docker",
-		"stripe.endsmart",
 		"aki77.html-erb",
 		"elia.erb-formatter",
 		"castwide.solargraph",
 		"connorshea.vscode-ruby-test-adapter",
 		"lorankloeze.ruby-rubocop-revived",
-		"koichisasada.vscode-rdbg"
+		"koichisasada.vscode-rdbg",
+		"kaiwood.endwise"
 	]
 }
