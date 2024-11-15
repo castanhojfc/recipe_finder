@@ -31,4 +31,4 @@ FileUtils.chdir APP_ROOT do
     STDOUT.flush # flush the output before exec(2) so that it displays
     exec "bin/dev"
   end
-
+end
