@@ -1,8 +1,17 @@
 class RecipesController < ApplicationController
+  MAX_RECIPES = 10
+
   # GET /recipes
   def index
-    @recipes = Recipe.all.first(10)
+    query = params[:query]
 
-    render json: { recipes: @recipes }
+    if query.present?
+      @recipes = Recipe.search(query).first(MAX_RECIPES)
+    else
+      # Gets recipes stored sequencially from a random offset location
+      random_offset = rand(Recipe.count)
+
+      @recipes = Recipe.offset(random_offset).first(MAX_RECIPES)
+    end
   end
 end
