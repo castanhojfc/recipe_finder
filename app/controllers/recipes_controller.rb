@@ -1,17 +1,15 @@
 class RecipesController < ApplicationController
-  MAX_RECIPES = 10
-
   # GET /recipes
   def index
     query = params[:query]
 
     if query.present?
-      @recipes = Recipe.search(query).first(MAX_RECIPES)
+      @pagy, @recipes = pagy(Recipe.search(query))
     else
       # Gets recipes stored sequencially from a random offset location
       random_offset = rand(Recipe.count)
 
-      @recipes = Recipe.offset(random_offset).first(MAX_RECIPES)
+      @pagy, @recipes = pagy(Recipe.offset(random_offset))
     end
   end
 end
