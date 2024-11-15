@@ -9,6 +9,15 @@
 			"args": [
 				"server"
 			]
-		}
+		},
+		{
+			"type": "rdbg",
+			"name": "Debug Seed",
+			"request": "launch",
+			"script": "${workspaceFolder}/bin/rails",
+			"args": [
+				"db:seed"
+			]
+		},
 	]
 }
