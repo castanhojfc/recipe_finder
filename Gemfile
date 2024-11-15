@@ -78,3 +78,6 @@ end
 
 # Builds Active Record named scopes that take advantage of PostgreSQL's full text search [https://github.com/Casecommons/pg_search]
 gem "pg_search", "~> 2.3"
+
+# Agnostic pagination in plain ruby. It does it all. Better. [https://github.com/ddnexus/pagy]
+gem "pagy", "~> 9.2"
