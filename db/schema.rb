@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_11_15_004323) do
+ActiveRecord::Schema[8.0].define(version: 2024_11_15_170154) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -26,5 +26,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_15_004323) do
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.tsvector "searchable_lexemes"
+    t.index ["searchable_lexemes"], name: "index_recipes_on_searchable_lexemes", using: :gin
   end
 end
