@@ -1,9 +1,41 @@
 # This file should ensure the existence of records required to run the application in every environment (production,
 # development, test). The code here should be idempotent so that it can be executed at any point in every environment.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+
+require 'json'
+
+RECIPES_SEED_PATH = "./db/recipes-en.json"
+logger = Rails.logger
+
+logger.info "Seeding recipes starting..."
+
+# WARNING: Loading an entire file in memory.
+begin
+  recipe_file_content = File.read(RECIPES_SEED_PATH)
+rescue StandardError => e
+  puts "Error while opening recipe JSON file. Details: #{e.message}"
+end
+
+begin
+  recipes = JSON.parse(recipe_file_content)
+rescue JSON::NestingError, JSON::ParserError, TypeError => e
+  logger.error "Error while parsing recipe JSON file. Details: #{e.message}"
+end
+
+if recipes.present?
+  recipes.each do | recipe |
+    Recipe.new(
+      title: recipe['title'],
+      cook_time: recipe['cook_time'],
+      prep_time: recipe['prep_time'],
+      ingredients: recipe['ingredients'],
+      ratings: recipe['ratings'],
+      cuisine: recipe['cuisine'],
+      category: recipe['category'],
+      author: recipe['author'],
+      image: recipe['image'],
+    ).save!
+  end
+
+  logger.info "Seeding recipes finished successfully!"
+end
