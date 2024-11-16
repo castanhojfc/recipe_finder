@@ -1,7 +1,92 @@
-<div class="container mx-auto py-5">
-  <div class="flex items-center justify-center h-screen">
-    <div>
-      What ingredients you've got in your home?
+<div class="flex flex-col w-full">
+  <div class="overlow-x-auto sm:mx-0.5 lg:mx-0.5">
+    <div class="py-2 inline-block min-w-full">
+      <div class="overlow-x-auto">
+        <table class="min-w-full overflow-x-scroll">
+          <thead class="bg-white border-b">
+            <tr>
+              <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
+                Image
+              </th>
+              <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
+                Title
+              </th>
+              <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
+                Category
+              </th>
+              <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
+                Ingredients
+              </th>
+              <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
+                Cook time (min)
+              </th>
+              <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
+                Preparation Time (min)
+              </th>
+              <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
+                Ratings
+              </th>
+              <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
+                Author
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @recipes.each do |r| %>
+              <tr class="bg-gray-50 border-b">
+                <td
+                  class="
+                    px-6 py-4 whitepsace-nowrap tex-sm font-medium text-gray-800 underline
+                  "
+                >
+                  <%= if r.image.present?
+                    image_tag(r.image, class: "max-w-[200px] max-h-[200px]")
+                  else
+                    image_tag("/placeholder.png")
+                  end %>
+                </td>
+                <td class="px-6 py-4 whitepsace-nowrap tex-sm font-medium text-gray-800">
+                  <%= r.title %>
+                </td>
+                <td class="px-6 py-4 whitepsace-nowrap tex-sm font-medium text-gray-800">
+                  <%= r.category %>
+                </td>
+                <td class="px-6 py-4 whitepsace-nowrap tex-sm font-medium text-gray-800">
+                  <div class="grid grid-cols-2 gap-4">
+                    <% r.ingredients.each do |ingredient| %>
+                      <div class="bg-gray-100 rounded-lg p-3 text-center text-gray-700">
+                        <%= ingredient %>
+                      </div>
+                    <% end %>
+                  </div>
+                </td>
+                <td class="px-6 py-4 whitepsace-nowrap tex-sm font-medium text-gray-800">
+                  <%= r.cook_time %>
+                </td>
+                <td class="px-6 py-4 whitepsace-nowrap tex-sm font-medium text-gray-800">
+                  <%= r.prep_time %>
+                </td>
+                <td class="px-6 py-4 whitepsace-nowrap tex-sm font-medium text-gray-800">
+                  <%= r.ratings %>
+                </td>
+                <td class="px-6 py-4 whitepsace-nowrap tex-sm font-medium text-gray-800">
+                  <%= r.author %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="w-full max-2-6xl mx-auto px-2">
+  <div class="xl:grid xl:grid-cols-1">
+    <div class="mx-auto my-auto">
+      <%== pagy_nav(@pagy) if @pagy.pages > 1 %>
+    </div>
+    <div class="mx-auto my-auto py-2">
+      <%== pagy_info(@pagy) if @pagy.pages > 1 %>
     </div>
   </div>
 </div>
