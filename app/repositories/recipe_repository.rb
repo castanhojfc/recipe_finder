@@ -4,10 +4,7 @@ module Repositories
       if query.present?
         Recipe.search(query)
       else
-        # Gets recipes stored sequencially from a random offset location
-        random_offset = rand(Recipe.count)
-
-        Recipe.offset(random_offset)
+        Recipe.all.limit(Pagy::DEFAULT[:items])
       end
     end
   end

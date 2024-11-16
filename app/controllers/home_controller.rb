@@ -5,5 +5,6 @@ class HomeController < ApplicationController
 
   def index
     @pagy, @recipes = pagy(RecipeRepository.search(params[:query]))
+    @pagy.series
   end
 end
