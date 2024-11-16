@@ -1,3 +1,5 @@
+require_relative "../repositories/recipe_repository.rb"
+
 class RecipesController < ApplicationController
   include Repositories
 

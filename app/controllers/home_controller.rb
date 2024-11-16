@@ -1,3 +1,5 @@
+require_relative "../repositories/recipe_repository.rb"
+
 class HomeController < ApplicationController
   include Repositories
 
