@@ -33,7 +33,7 @@ if recipes.present?
       cuisine: recipe['cuisine'],
       category: recipe['category'],
       author: recipe['author'],
-      image: recipe['image'],
+      image: URI.decode_www_form_component(recipe['image']).split('=')[1],
     ).save!
   end
 
