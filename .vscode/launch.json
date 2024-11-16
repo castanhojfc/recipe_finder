@@ -8,7 +8,8 @@
 			"script": "${workspaceFolder}/bin/rails",
 			"args": [
 				"server"
-			]
+			],
+			"useBundler": true
 		},
 		{
 			"type": "rdbg",
@@ -17,7 +18,8 @@
 			"script": "${workspaceFolder}/bin/rails",
 			"args": [
 				"db:seed"
-			]
+			],
+			"useBundler": true
 		},
 	]
 }
