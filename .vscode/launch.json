@@ -21,5 +21,15 @@
 			],
 			"useBundler": true
 		},
+		{
+			"type": "rdbg",
+			"name": "Debug test (Cursor)",
+			"request": "launch",
+			"useBundler": true,
+			"script": "${workspaceFolder}/bin/rails",
+			"args": [
+				"test ${file}:${lineNumber}"
+			],
+		}
 	]
 }
