@@ -1,85 +1,111 @@
+<div class="flex px-4 py-4">
+  <%= form_with url: root_path, method: :get, class: "flex w-full items-center space-x-2" do |form| %>
+    <%= form.text_field :query,
+                    placeholder: "What do you have available at home?",
+                    class:
+                      "flex-grow h-16 py-4 px-4 text-lg border border-cyan-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500" %>
+    <%= form.submit "Submit",
+                class:
+                  "cursor-pointer bg-cyan-500 text-white h-16 py-2 px-4 rounded" %>
+    <%= button_to "Clear",
+    root_path,
+    method: :get,
+    class: "cursor-pointer bg-cyan-500 text-white h-16 py-2 px-4 rounded" %>
+  <% end %>
+</div>
+
 <div class="flex flex-col w-full">
-  <div class="overlow-x-auto sm:mx-0.5 lg:mx-0.5">
-    <div class="py-2 inline-block min-w-full">
-      <div class="overlow-x-auto">
-        <table class="min-w-full overflow-x-scroll">
-          <thead class="bg-white border-b">
-            <tr>
-              <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
-                Image
-              </th>
-              <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
-                Title
-              </th>
-              <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
-                Category
-              </th>
-              <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
-                Ingredients
-              </th>
-              <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
-                Cook time (min)
-              </th>
-              <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
-                Preparation Time (min)
-              </th>
-              <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
-                Ratings
-              </th>
-              <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
-                Author
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @recipes.each do |r| %>
-              <tr class="bg-gray-50 border-b">
-                <td
-                  class="
-                    px-6 py-4 whitepsace-nowrap tex-sm font-medium text-gray-800 underline
-                  "
-                >
-                  <%= if r.image.present?
-                    image_tag(r.image, class: "max-w-[200px] max-h-[200px]")
-                  else
-                    image_tag("/placeholder.png")
-                  end %>
-                </td>
-                <td class="px-6 py-4 whitepsace-nowrap tex-sm font-medium text-gray-800">
-                  <%= r.title %>
-                </td>
-                <td class="px-6 py-4 whitepsace-nowrap tex-sm font-medium text-gray-800">
-                  <%= r.category %>
-                </td>
-                <td class="px-6 py-4 whitepsace-nowrap tex-sm font-medium text-gray-800">
-                  <div class="grid grid-cols-2 gap-4">
-                    <% r.ingredients.each do |ingredient| %>
-                      <div class="bg-gray-100 rounded-lg p-3 text-center text-gray-700">
-                        <%= ingredient %>
-                      </div>
-                    <% end %>
-                  </div>
-                </td>
-                <td class="px-6 py-4 whitepsace-nowrap tex-sm font-medium text-gray-800">
-                  <%= r.cook_time %>
-                </td>
-                <td class="px-6 py-4 whitepsace-nowrap tex-sm font-medium text-gray-800">
-                  <%= r.prep_time %>
-                </td>
-                <td class="px-6 py-4 whitepsace-nowrap tex-sm font-medium text-gray-800">
-                  <%= r.ratings %>
-                </td>
-                <td class="px-6 py-4 whitepsace-nowrap tex-sm font-medium text-gray-800">
-                  <%= r.author %>
-                </td>
+  <% if @recipes.any? %>
+    <div class="overflow-x-auto sm:mx-0.5 lg:mx-0.5">
+      <div class="py-2 inline-block min-w-full">
+        <div class="overflow-x-auto">
+          <table class="min-w-full overflow-x-scroll">
+            <thead class="bg-grey-500 border">
+              <tr>
+                <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
+                  Image
+                </th>
+                <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
+                  Title
+                </th>
+                <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
+                  Category
+                </th>
+                <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
+                  Ingredients
+                </th>
+                <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
+                  Cook time (min)
+                </th>
+                <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
+                  Preparation Time (min)
+                </th>
+                <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
+                  Ratings
+                </th>
+                <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
+                  Author
+                </th>
               </tr>
-            <% end %>
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              <% @recipes.each do |r| %>
+                <tr class="bg-gray-50 border-b">
+                  <td
+                    class="
+                      px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 underline
+                    "
+                  >
+                    <%= if r.image.present?
+                      image_tag(r.image, class: "max-w-[200px] max-h-[200px]")
+                    else
+                      image_tag("/placeholder.png")
+                    end %>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
+                    <%= r.title %>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
+                    <%= r.category %>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
+                    <div>
+                      <% r.ingredients.each do |ingredient| %>
+                        <div class="bg-cyan-100 p-3 text-center text-cyan-700 break-words">
+                          <%= ingredient %>
+                        </div>
+                      <% end %>
+                    </div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
+                    <%= r.cook_time %>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
+                    <%= r.prep_time %>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
+                    <%= r.ratings %>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
+                    <%= r.author %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
-  </div>
+  <% else %>
+    <div class="text-center py-10">
+      <p class="text-lg font-medium text-gray-700">
+        Hoah! No recipes found. Try adjusting your search! Watchout for typos.
+        Ingredients should be separated with white spaces.
+      </p>
+    </div>
+  <% end %>
 </div>
+
 <div class="w-full max-2-6xl mx-auto px-2">
   <div class="xl:grid xl:grid-cols-1">
     <div class="mx-auto my-auto">
