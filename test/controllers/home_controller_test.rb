@@ -1,7 +1,7 @@
 require "test_helper"
 require_relative "../../app/repositories/recipe_repository.rb"
 
-class RecipesControllerTest < ActionDispatch::IntegrationTest
+class HomeControllerTest < ActionDispatch::IntegrationTest
   include Repositories
 
   setup do
@@ -12,7 +12,7 @@ class RecipesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get recipes with search query" do
-    get recipes_url, params: { query: @valid_query }
+    get root_url, params: { query: @valid_query }
 
     assert_response :success
 
@@ -21,7 +21,7 @@ class RecipesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get recipes with no match for search query" do
-    get recipes_url, params: { query: @non_existent_query }
+    get root_url, params: { query: @non_existent_query }
 
     assert_response :success
 
