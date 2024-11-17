@@ -13,4 +13,19 @@ class RecipeTest < ActiveSupport::TestCase
     assert_includes result, @golden_sweet_cornbread
     assert_not_includes result, @monkey_bread_i
   end
+
+  test "search by ingredients returns correct recipe" do
+    query = "yellow cornmeal"
+    result = Recipe.search(query)
+
+    assert_includes result, @golden_sweet_cornbread
+    assert_not_includes result, @monkey_bread_i
+  end
+
+    test "search returns no recipes if no match" do
+    query = "nonexistentrecipe"
+    result = Recipe.search(query)
+
+    assert_empty result
+  end
 end
