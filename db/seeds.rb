@@ -23,18 +23,22 @@ rescue JSON::NestingError, JSON::ParserError, TypeError => e
 end
 
 if recipes.present?
-  recipes.each do | recipe |
-    Recipe.new(
-      title: recipe['title'],
-      cook_time: recipe['cook_time'],
-      prep_time: recipe['prep_time'],
-      ingredients: recipe['ingredients'],
-      ratings: recipe['ratings'],
-      cuisine: recipe['cuisine'],
-      category: recipe['category'],
-      author: recipe['author'],
-      image: URI.decode_www_form_component(recipe['image']).split('=')[1],
-    ).save!
+  begin
+    recipes.each do | recipe |
+      Recipe.new(
+        title: recipe['title'],
+        cook_time: recipe['cook_time'],
+        prep_time: recipe['prep_time'],
+        ingredients: recipe['ingredients'],
+        ratings: recipe['ratings'],
+        cuisine: recipe['cuisine'],
+        category: recipe['category'],
+        author: recipe['author'],
+        image: URI.decode_www_form_component(recipe['image']).split('=')[1],
+      ).save!
+    end
+  rescue StandardError => e
+    logger.error "Error while seeding a recipe. Details: #{e.message}"
   end
 
   logger.info "Seeding recipes finished successfully!"
