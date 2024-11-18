@@ -18,7 +18,7 @@ class HomeTest < ApplicationSystemTestCase
 
   test "shows the search form" do
     visit root_path
-    assert_selector "input[placeholder='What do you have available at home?']"
+    assert_selector "input[placeholder='What do you have available at home? (ex: banana coffee bread...)']"
     assert_button "Submit"
     assert_button "Clear"
   end

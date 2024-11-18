@@ -1,49 +1,49 @@
 <div class="flex px-4 py-4">
   <%= form_with url: root_path, method: :get, class: "flex w-full items-center space-x-2" do |form| %>
     <%= form.text_field :query,
-                    placeholder: "What do you have available at home?",
+                    placeholder: "What do you have available at home? (ex: banana coffee bread...)",
                     class:
-                      "flex-grow h-16 py-4 px-4 text-lg border border-cyan-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500" %>
+                      "flex-grow px-4 text-md border border-cyan-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 py-2" %>
     <%= form.submit "Submit",
                 class:
-                  "cursor-pointer bg-cyan-500 text-white h-16 py-2 px-4 rounded" %>
+                  "cursor-pointer bg-cyan-500 text-white px-4 py-2 rounded" %>
     <%= button_to "Clear",
     root_path,
     method: :get,
-    class: "cursor-pointer bg-cyan-500 text-white h-16 py-2 px-4 rounded" %>
+    class: "cursor-pointer bg-cyan-500 text-white px-4 py-2 rounded" %>
   <% end %>
 </div>
 
 <div class="flex flex-col w-full">
   <% if @recipes.any? %>
-    <div class="overflow-x-auto sm:mx-0.5 lg:mx-0.5">
+    <div class="overflow-x-auto">
       <div class="py-2 inline-block min-w-full">
         <div class="overflow-x-auto">
           <table class="min-w-full overflow-x-scroll">
             <thead class="bg-grey-500 border">
               <tr>
-                <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
+                <th scope="col" class="font-medium text-gray-800 px-6 py-4 text-left">
                   Image
                 </th>
-                <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
+                <th scope="col" class=" font-medium text-gray-800 px-6 py-4 text-left">
                   Title
                 </th>
-                <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
+                <th scope="col" class=" font-medium text-gray-800 px-6 py-4 text-left">
                   Category
                 </th>
-                <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
+                <th scope="col" class=" font-medium text-gray-800 px-6 py-4 text-left">
                   Ingredients
                 </th>
-                <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
+                <th scope="col" class=" font-medium text-gray-800 px-6 py-4 text-left">
                   Cook time (min)
                 </th>
-                <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
+                <th scope="col" class=" font-medium text-gray-800 px-6 py-4 text-left">
                   Preparation Time (min)
                 </th>
-                <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
+                <th scope="col" class=" font-medium text-gray-800 px-6 py-4 text-left">
                   Ratings
                 </th>
-                <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
+                <th scope="col" class=" font-medium text-gray-800 px-6 py-4 text-left">
                   Author
                 </th>
               </tr>
@@ -53,7 +53,7 @@
                 <tr class="bg-gray-50 border-b">
                   <td
                     class="
-                      px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 underline
+                      px-6 py-4 whitespace-nowrap font-medium text-gray-800 underline
                     "
                   >
                     <%= if r.image.present?
@@ -62,31 +62,31 @@
                       image_tag("/placeholder.png")
                     end %>
                   </td>
-                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
+                  <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-800">
                     <%= r.title %>
                   </td>
-                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
+                  <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-800">
                     <%= r.category %>
                   </td>
-                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
+                  <td class="px-6 py-4 whitespace-nowrap text-sm font-small text-gray-800">
                     <div>
                       <% r.ingredients.each do |ingredient| %>
-                        <div class="bg-cyan-100 p-3 text-center text-cyan-700 break-words">
+                        <div class="bg-cyan-100 text-center text-cyan-700 break-words">
                           <%= ingredient %>
                         </div>
                       <% end %>
                     </div>
                   </td>
-                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
+                  <td class="px-6 py-4 whitespace-nowrap  font-medium text-gray-800">
                     <%= r.cook_time %>
                   </td>
-                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
+                  <td class="px-6 py-4 whitespace-nowrap  font-medium text-gray-800">
                     <%= r.prep_time %>
                   </td>
-                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
+                  <td class="px-6 py-4 whitespace-nowrap  font-medium text-gray-800">
                     <%= r.ratings %>
                   </td>
-                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
+                  <td class="px-6 py-4 whitespace-nowrap  font-medium text-gray-800">
                     <%= r.author %>
                   </td>
                 </tr>
