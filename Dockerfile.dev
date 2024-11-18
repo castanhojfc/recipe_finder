@@ -1,0 +1,31 @@
+FROM ruby:3.3.6
+
+# Install dependencies
+RUN apt-get update -qq && \
+	apt-get install --no-install-recommends -y curl libjemalloc2 libvips postgresql-client && \
+	rm -rf /var/lib/apt/lists /var/cache/apt/archives
+
+# Install packages needed to build gems
+RUN apt-get update -qq && \
+	apt-get install --no-install-recommends -y build-essential git libpq-dev pkg-config && \
+	rm -rf /var/lib/apt/lists /var/cache/apt/archives
+
+ENV BUNDLE_PATH="/usr/local/bundle"
+
+# Set working directory inside the container
+WORKDIR /rails
+
+# Install bundler
+RUN gem install bundler
+
+# Copy Gemfile and Gemfile.lock before installing gems
+# This allows us to leverage Docker's caching mechanism
+COPY Gemfile Gemfile.lock ./
+
+# Install application gems
+RUN bundle install && \
+	rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git && \
+	bundle exec bootsnap precompile --gemfile
+
+# Copy the rest of the application code
+COPY . .
