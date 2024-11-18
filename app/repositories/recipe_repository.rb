@@ -9,6 +9,3 @@ module Repositories
     end
   end
 end
-
-# Help Rails pickup the constant
-RecipeRepository = Repositories::RecipeRepository
