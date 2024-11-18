@@ -56,10 +56,10 @@ group :development, :test do
   gem "rubocop-rails-omakase", require: false
 
   # IDE tools for code completion, inline documentation, and static analysis [https://solargraph.org/]
-  gem "solargraph", "~> 0.50.0", group: :development
+  gem "solargraph", "~> 0.50.0"
 
   # Add reflection on ActiveModel dynamic attributes that will be created at runtime [https://github.com/iftheshoefritz/solargraph-rails]
-  gem "solargraph-rails", "~> 1.1", group: :development
+  gem "solargraph-rails", "~> 1.1"
 end
 
 group :development do
@@ -68,6 +68,9 @@ group :development do
 
   # Format ERB files with speed and precision [https://github.com/nebulab/erb-formatter]
   gem "erb-formatter", "~> 0.7.3"
+
+  # Dockerfile generator for Rails [https://github.com/fly-apps/dockerfile-rails]
+  gem "dockerfile-rails", ">= 1.6"
 end
 
 group :test do
