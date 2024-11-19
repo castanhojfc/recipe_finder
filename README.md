@@ -28,7 +28,7 @@ The application is deployed [here](https://recipe-finder-blue-darkness-8237.fly.
 
 ## 📖 User Stories
 
-*As a Cook, I want to type the ingredients I have available, so that I learn more recipes, know who made them and how they look like.*
+*As a Cook, I want to search for recipes using the ingredients I have available, so that I can learn more recipes, know who made them and how they look like.*
 
 *As a Cook, I want to know the recipes with the highest rating, so that I can cook the best recipes.*
 
