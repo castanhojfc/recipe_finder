@@ -2,7 +2,7 @@
 
 ## Hi there 👋 thank you for taking a look at my code!
 
-I'm Francisco Castanho and I will take this opportunity to leave as much details as possible to make going trough this work easier.
+I'm Francisco Castanho and I will take this opportunity to leave some details to make going trough this work easier.
 
 The application is deployed [here](https://recipe-finder-blue-darkness-8237.fly.dev/).
 
@@ -18,17 +18,17 @@ The application is deployed [here](https://recipe-finder-blue-darkness-8237.fly.
 
 ![Searching](docs/images/searching.png)
 
-- Recipes can be sorted and the fields supported are: Title, Category, Ingredients(Number of ingredients), Cook Time, Prep Time, Ratings and Author.
+- Recipes can be sorted and the fields supported are: Title, Category, Ingredients(number of ingredients), Cook Time, Prep Time, Ratings and Author.
 
 ![Sorting](docs/images/sorting.png)
 
-- Recipes are also paginated. Just lick on the numbered buttons to jump to a page. Or in the *<* *>* buttons to jump to the first and last pages respectively.
+- Recipes are also paginated. Just click on the numbered buttons to jump to a page. Or in the *<* *>* buttons to jump to the first and last pages respectively.
 
 ![Pagination](docs/images/pagination.png)
 
 ## 📖 User Stories
 
-*As a Cook, I want to type the ingredients I have available, so that I learn more recipes and know who made them and how they look like.*
+*As a Cook, I want to type the ingredients I have available, so that I learn more recipes, know who made them and how they look like.*
 
 *As a Cook, I want to know the recipes with the highest rating, so that I can cook the best recipes.*
 
@@ -36,9 +36,9 @@ The application is deployed [here](https://recipe-finder-blue-darkness-8237.fly.
 
 ## 🧰 Approach
 
-The objective from the start was to provide the most value to the user as fast as possible. They will be paying us. To not introduce all the features in the world, but those that are should work very well. The components in the user interface should be intuitive and and the user should have easy access to what they want.
+The objective from the start was to provide the most value to the user as fast as possible. They will be paying and this will allow us to obtain feedback faster, improve and fix bugs too. Furthermore, to not introduce all the features in the world, but those that are, should work very well. The components in the user interface should be intuitive and the user should have easy access to what they want.
 
-The data was not split into multiple tables. It would complitate the process of accessing the data and relating it. This simplified the business logic while allowing the application to show the recipes that the user wants.
+The data was not split into multiple tables. It would complitate the process of accessing it. This simplified the business logic while allowing the application to show the recipes that the user wants.
 
 Over-normalizing a database can hurt performance by creating too many tables and joins, leading to increased disk operations, network traffic, and memory usage. It can also weaken the effectiveness of indexes, caching, and partitioning, resulting in slower queries, higher resource consumption, and reduced scalability.
 
@@ -50,12 +50,15 @@ While this application doesn’t modify data, updates would be slower because th
 
 Other than that, the code should be simple enough to comment itself. 👍
 
-## 👷 Future work/Limitations
+## 👷 Some future work & limitations
 
 - Support more languages besides english.
 - Allow typos in the search query.
 - More unit tests could have been written.
 - The application does not include any protection against malitious use (rate-limiting for example) other than what the dependencies provide.
+- The user interface is not responsive.
+- When the user does not find any recipes, perhaps recommendations could have been shown to set him/her in the right track.
+- (...)
 
 ## How to run locally
 
