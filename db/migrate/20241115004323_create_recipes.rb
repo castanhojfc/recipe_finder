@@ -4,7 +4,8 @@ class CreateRecipes < ActiveRecord::Migration[8.0]
       t.string :title
       t.integer :cook_time
       t.integer :prep_time
-      t.string :ingredients, array: true, default: []
+      t.string :ingredients
+      t.integer :number_of_ingredients
       t.decimal :ratings
       t.string :cuisine
       t.string :category

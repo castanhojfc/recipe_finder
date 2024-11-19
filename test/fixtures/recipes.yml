@@ -1,16 +1,10 @@
 golden_sweet_cornbread:
+  id: 1
   title: Golden Sweet Cornbread
   cook_time: 25
   prep_time: 10
-  ingredients:
-    - 1 cup all-purpose flour
-    - 1 cup yellow cornmeal
-    - ⅔ cup white sugar
-    - 1 teaspoon salt
-    - 3 ½ teaspoons baking powder
-    - 1 egg
-    - 1 cup milk
-    - ⅓ cup vegetable oil
+  ingredients: "1 cup all-purpose flour|1 cup yellow cornmeal|⅔ cup white sugar|1 teaspoon salt|3 ½ teaspoons baking powder|1 egg|1 cup milk|⅓ cup vegetable oil"
+  number_of_ingredients: 8
   ratings: 4.74
   cuisine: ""
   category: Cornbread
@@ -21,17 +15,12 @@ golden_sweet_cornbread:
   searchable_lexemes: "'1':5C,11C,18C,25C,27C '3':21C 'all-purpos':7C 'bake':23C 'cornbread':3A,4B 'cornmeal':14C 'cup':6C,12C,15C,28C,30C 'egg':26C 'flour':10C 'golden':1A 'milk':29C 'oil':32C 'powder':24C 'purpos':9C 'salt':20C 'sugar':17C 'sweet':2A 'teaspoon':19C,22C 'veget':31C 'white':16C 'yellow':13C"
 
 monkey_bread_i:
+  id: 2
   title: Monkey Bread I
   cook_time: 35
   prep_time: 15
-  ingredients:
-    - 3 (12 ounce) packages refrigerated biscuit dough
-    - 1 cup white sugar
-    - 2 teaspoons ground cinnamon
-    - ½ cup margarine
-    - 1 cup packed brown sugar
-    - ½ cup chopped walnuts
-    - ½ cup raisins
+  ingredients: "3 (12 ounce) packages refrigerated biscuit dough|1 cup white sugar|2 teaspoons ground cinnamon|½ cup margarine|1 cup packed brown sugar|½ cup chopped walnuts|½ cup raisins"
+  number_of_ingredients: 7
   ratings: 4.74
   cuisine: ""
   category: Monkey Bread
@@ -42,16 +31,12 @@ monkey_bread_i:
   searchable_lexemes: "'1':12C,22C '12':6C '2':16C '3':5C 'biscuit':10C 'bread':2A,4B 'brown':25C 'chop':28C 'cinnamon':19C 'cup':13C,20C,23C,27C,30C 'dough':11C 'ground':18C 'margarin':21C 'monkey':1A,3B 'ounc':7C 'pack':24C 'packag':8C 'raisin':31C 'refriger':9C 'sugar':15C,26C 'teaspoon':17C 'walnut':29C 'white':14C"
 
 whole_wheat_beer_bread:
+  id: 3
   title: Whole Wheat Beer Bread
   cook_time: 50
   prep_time: 10
-  ingredients:
-    - 1 ½ cups all-purpose flour
-    - 1 ½ cups whole wheat flour
-    - 4 ½ teaspoons baking powder
-    - 1 ½ teaspoons salt
-    - ⅓ cup packed brown sugar
-    - 1 (12 fluid ounce) can or bottle beer
+  ingredients: "1 ½ cups all-purpose flour|1 ½ cups whole wheat flour|4 ½ teaspoons baking powder|1 ½ teaspoons salt|⅓ cup packed brown sugar|1 (12 fluid ounce) can or bottle beer"
+  number_of_ingredients: 6
   ratings: 4.52
   cuisine: ""
   category: Quick Bread
@@ -62,18 +47,12 @@ whole_wheat_beer_bread:
   searchable_lexemes: "'1':7C,13C,22C,29C '12':30C '4':18C 'all-purpos':9C 'bake':20C 'beer':3A,36C 'bottl':35C 'bread':4A,6B 'brown':27C 'cup':8C,14C,25C 'flour':12C,17C 'fluid':31C 'ounc':32C 'pack':26C 'powder':21C 'purpos':11C 'quick':5B 'salt':24C 'sugar':28C 'teaspoon':19C,23C 'wheat':2A,16C 'whole':1A,15C"
 
 winter_squash_rolls:
+  id: 4
   title: Winter Squash Rolls
   cook_time: 45
   prep_time: 30
-  ingredients:
-    - 1 ½ cups cubed winter squash
-    - 1 cup scalded milk
-    - 2 (.25 ounce) packages active dry yeast
-    - ½ cup warm water (110 degrees F/45 degrees C)
-    - 6 cups all-purpose flour
-    - ½ cup white sugar
-    - 2 teaspoons salt
-    - ½ cup shortening
+  ingredients: "1 ½ cups cubed winter squash|1 cup scalded milk|2 (.25 ounce) packages active dry yeast|½ cup warm water (110 degrees F/45 degrees C)|6 cups all-purpose flour|½ cup white sugar|2 teaspoons salt|½ cup shortening"
+  number_of_ingredients: 8
   ratings: 4.71
   cuisine: ""
   category: Roll and Bun Recipes
@@ -84,15 +63,12 @@ winter_squash_rolls:
   searchable_lexemes: "'1':8C,13C '110':27C '2':17C,41C '25':18C '6':32C 'activ':21C 'all-purpos':34C 'bun':6B 'c':31C 'cube':10C 'cup':9C,14C,24C,33C,38C,44C 'degre':28C,30C 'dri':22C 'f/45':29C 'flour':37C 'milk':16C 'ounc':19C 'packag':20C 'purpos':36C 'recip':7B 'roll':3A,4B 'salt':43C 'scald':15C 'shorten':45C 'squash':2A,12C 'sugar':40C 'teaspoon':42C 'warm':25C 'water':26C 'white':39C 'winter':1A,11C 'yeast':23C"
 
 homemade_flour_tortillas:
+  id: 5
   title: Homemade Flour Tortillas
   cook_time: 45
   prep_time: 15
-  ingredients:
-    - 4 cups all-purpose flour
-    - 1 teaspoon salt
-    - 2 teaspoons baking powder
-    - 2 tablespoons lard
-    - 1 ½ cups water
+  ingredients: "4 cups all-purpose flour|1 teaspoon salt|2 teaspoons baking powder|2 tablespoons lard|1 ½ cups water"
+  number_of_ingredients: 5
   ratings: 4.54
   cuisine: ""
   category: Tortillas
@@ -103,15 +79,12 @@ homemade_flour_tortillas:
   searchable_lexemes: "'1':11C,21C '2':14C,18C '4':5C 'all-purpos':7C 'bake':16C 'cup':6C,22C 'flour':2A,10C 'homemad':1A 'lard':20C 'powder':17C 'purpos':9C 'salt':13C 'tablespoon':19C 'teaspoon':12C,15C 'tortilla':3A,4B 'water':23C"
 
 brooklyn_style_pizza_dough:
+  id: 6
   title: Brooklyn Style Pizza Dough
   cook_time: 10
   prep_time: 30
-  ingredients:
-    - 3 cups bread flour, divided, or as needed
-    - 1 cup warm water
-    - 1 tablespoon active dry yeast
-    - ½ teaspoon salt
-    - 2 tablespoons olive oil
+  ingredients: "3 cups bread flour, divided, or as needed|1 cup warm water|1 tablespoon active dry yeast|½ teaspoon salt|2 tablespoons olive oil"
+  number_of_ingredients: 5
   ratings: 4.0
   cuisine: ""
   category: Pizza Dough and Crusts
@@ -122,22 +95,12 @@ brooklyn_style_pizza_dough:
   searchable_lexemes: "'1':17C,21C '2':28C '3':9C 'activ':23C 'bread':11C 'brooklyn':1A 'crust':8B 'cup':10C,18C 'divid':13C 'dough':4A,6B 'dri':24C 'flour':12C 'need':16C 'oil':31C 'oliv':30C 'pizza':3A,5B 'salt':27C 'style':2A 'tablespoon':22C,29C 'teaspoon':26C 'warm':19C 'water':20C 'yeast':25C"
 
 dianas_hawaiian_bread_rolls:
+  id: 7
   title: Diana's Hawaiian Bread Rolls
   cook_time: 15
   prep_time: 20
-  ingredients:
-    - 1 ½ cups warm water (110 degrees F/45 degrees C)
-    - 1 egg
-    - 1 teaspoon salt
-    - 1 teaspoon vanilla extract
-    - 1 teaspoon lemon extract
-    - 1 tablespoon molasses
-    - 1 tablespoon honey
-    - 5 tablespoons white sugar
-    - 2 tablespoons dry milk powder
-    - 2 tablespoons butter flavored shortening
-    - 4 ½ cups bread flour
-    - 2 teaspoons active dry yeast
+  ingredients: "1 ½ cups warm water (110 degrees F/45 degrees C)|1 egg|1 teaspoon salt|1 teaspoon vanilla extract|1 teaspoon lemon extract|1 tablespoon molasses|1 tablespoon honey|5 tablespoons white sugar|2 tablespoons dry milk powder|2 tablespoons butter flavored shortening|4 ½ cups bread flour|2 teaspoons active dry yeast"
+  number_of_ingredients: 12
   ratings: 4.25
   cuisine: ""
   category: Bread Machine
@@ -145,20 +108,15 @@ dianas_hawaiian_bread_rolls:
   image: "https://images.media-allrecipes.com/userphotos/50654.jpg"
   created_at: "2024-11-16 20:33:02.03524"
   updated_at: "2024-11-16 20:33:02.03524"
-  searchable_lexemes: "'1':8C,17C,19C,22C,26C,30C,33C '110':12C '2':40C,45C,54C '4':50C '5':36C 'activ':56C 'bread':4A,6B,52C 'butter':47C 'c':16C 'cup':9C,51C 'degre':13C,15C 'diana':1A 'dri':42C,57C 'egg':18C 'extract':25C,29C 'f/45':14C 'flavor':48C 'flour':53C 'hawaiian':3A 'honey':35C 'lemon':28C 'machin':7B 'milk':43C 'molass':32C 'powder':44C 'roll':5A 'salt':21C 'shorten':49C 'sugar':39C 'tablespoon':31C,34C,37C,41C,46C 'teaspoon':20C,23C,27C,55C 'vanilla':24C 'warm':10C 'water':11C 'white':38C 'yeast':58C"
+  searchable_lexemes: "'1':8C,17C,19C,22C,26C,30C,33C '110':12C '2':40C,45C,54C '4':50C '5':36C 'activ':56C 'bread':4A,6B,52C 'butter':47C 'c':16C 'cup':9C,51C 'degre':13C,15C 'diana':1A 'dri':42C,57C 'egg':18C 'extract':25C,29C 'f/45':11C 'flour':38C 'honey':49C 'milk':46C 'molass':48C 'need':41C 'powder':44C 'roll':10B,39C,53C 'salt':14C,34C 'shorten':50C 'sugar':32C 'teaspoon':23C,31C 'vanilla':24C 'water':7C 'yeast':55C"
 
 banana_banana_bread:
+  id: 8
   title: Banana Banana Bread
   cook_time: 65
   prep_time: 15
-  ingredients:
-    - 2 cups all-purpose flour
-    - 1 teaspoon baking soda
-    - ¼ teaspoon salt
-    - ½ cup butter
-    - ¾ cup brown sugar
-    - 2 eggs, beaten
-    - 2 ⅓ cups mashed overripe bananas
+  ingredients: "2 cups all-purpose flour|1 teaspoon baking soda|¼ teaspoon salt|½ cup butter|¾ cup brown sugar|2 eggs, beaten|2 ⅓ cups mashed overripe bananas"
+  number_of_ingredients: 7
   ratings: 4.59
   cuisine: ""
   category: Banana Bread
@@ -173,19 +131,8 @@ to_die_for_blueberry_muffins:
   title: "To Die For Blueberry Muffins"
   cook_time: 25
   prep_time: 15
-  ingredients:
-    - "1 ½ cups all-purpose flour"
-    - "¾ cup white sugar"
-    - "½ teaspoon salt"
-    - "2 teaspoons baking powder"
-    - "⅓ cup vegetable oil"
-    - "1 egg"
-    - "⅓ cup milk, or more as needed"
-    - "1 cup fresh blueberries"
-    - "½ cup white sugar"
-    - "⅓ cup all-purpose flour"
-    - "¼ cup butter, cubed"
-    - "1 ½ teaspoons ground cinnamon"
+  ingredients: "1 ½ cups all-purpose flour|¾ cup white sugar|½ teaspoon salt|2 teaspoons baking powder|⅓ cup vegetable oil|1 egg|⅓ cup milk, or more as needed|1 cup fresh blueberries|½ cup white sugar|⅓ cup all-purpose flour|¼ cup butter, cubed|1 ½ teaspoons ground cinnamon"
+  number_of_ingredients: 12
   ratings: 4.64
   category: "Blueberry Muffins"
   author: "deleteduser"
@@ -196,15 +143,8 @@ breakfast_pull_apart_bacon_and_egg_bread:
   title: "Breakfast Pull-Apart Bacon and Egg Bread"
   cook_time: 45
   prep_time: 15
-  ingredients:
-    - "6 slices turkey bacon, cut into small pieces"
-    - "butter-flavored cooking spray"
-    - "2 (16 ounce) cans refrigerated biscuit dough"
-    - "2 eggs"
-    - "¼ cup skim milk"
-    - "½ teaspoon salt"
-    - "½ teaspoon ground black pepper"
-    - "2 cups shredded sharp Cheddar cheese"
+  ingredients: "6 slices turkey bacon, cut into small pieces|butter-flavored cooking spray|2 (16 ounce) cans refrigerated biscuit dough|2 eggs|¼ cup skim milk|½ teaspoon salt|½ teaspoon ground black pepper|2 cups shredded sharp Cheddar cheese"
+  number_of_ingredients: 8
   ratings: 5.0
   category: "Breakfast Bread"
   author: "Jacqueline"
@@ -215,13 +155,8 @@ quick_and_easy_pizza_crust:
   title: "Quick and Easy Pizza Crust"
   cook_time: 0
   prep_time: 0
-  ingredients:
-    - "1 (.25 ounce) package active dry yeast"
-    - "1 teaspoon white sugar"
-    - "1 cup warm water (110 degrees F/45 degrees C)"
-    - "2 ½ cups bread flour"
-    - "2 tablespoons olive oil"
-    - "1 teaspoon salt"
+  ingredients: "1 (.25 ounce) package active dry yeast|1 teaspoon white sugar|1 cup warm water (110 degrees F/45 degrees C)|2 ½ cups bread flour|2 tablespoons olive oil|1 teaspoon salt"
+  number_of_ingredients: 6
   ratings: 4.7
   category: "Pizza Dough and Crusts"
   author: "CHEF RIDER"
@@ -232,15 +167,8 @@ banana_muffins_ii:
   title: "Banana Muffins II"
   cook_time: 25
   prep_time: 10
-  ingredients:
-    - "1 ½ cups all-purpose flour"
-    - "1 teaspoon baking powder"
-    - "1 teaspoon baking soda"
-    - "½ teaspoon salt"
-    - "3 large bananas, mashed"
-    - "¾ cup white sugar"
-    - "1 egg"
-    - "⅓ cup butter, melted"
+  ingredients: "1 ½ cups all-purpose flour|1 teaspoon baking powder|1 teaspoon baking soda|½ teaspoon salt|3 large bananas, mashed|¾ cup white sugar|1 egg|⅓ cup butter, melted"
+  number_of_ingredients: 8
   ratings: 4.79
   category: "Banana Muffins"
   author: "ABI_GODFREY"

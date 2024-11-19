@@ -33,9 +33,15 @@ class HomeTest < ApplicationSystemTestCase
     assert_text "Golden Sweet Cornbread"
     assert_text "25"
     assert_text "10"
-    @golden_sweet_cornbread.ingredients.each do |ingredient|
-      assert_text ingredient
-    end
+
+    assert_text "1 cup all-purpose flour"
+    assert_text "1 cup yellow cornmeal"
+    assert_text "⅔ cup white sugar"
+    assert_text "1 teaspoon salt"
+    assert_text "3 ½ teaspoons baking powder"
+    assert_text "1 egg"
+    assert_text "1 cup milk"
+    assert_text "⅓ cup vegetable oil"
     assert_text "4.74"
     assert_text "Cornbread"
     assert_text "bluegirl"
@@ -47,7 +53,7 @@ class HomeTest < ApplicationSystemTestCase
     fill_in "query", with: "nonexistent ingredient"
     click_on "Submit"
 
-    assert_text "Hoah! No recipes found. Try adjusting your search! Watchout for typos. Ingredients should be separated with white spaces."
+    assert_text "Hoah! No recipes found. Try adjusting your search! Watchout for typos."
   end
 
   test "clears the search form" do
@@ -69,5 +75,22 @@ class HomeTest < ApplicationSystemTestCase
     click_on ">"
     assert_no_text "Golden Sweet Cornbread"
     assert_text "Quick and Easy Pizza Crust" # Recipe 11
+  end
+
+  test "sorts recipes by title" do
+    visit root_path
+
+    first_recipe = @golden_sweet_cornbread
+    last_recipe = @quick_and_easy_pizza_crust
+
+    click_on "Title"
+
+    assert_text first_recipe.title
+    assert_text last_recipe.title
+
+    click_on "Title"
+
+    assert_text last_recipe.title
+    assert_text first_recipe.title
   end
 end

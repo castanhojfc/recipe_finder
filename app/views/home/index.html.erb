@@ -50,7 +50,10 @@
                   </div>
                 </th>
                 <th scope="col" class="font-medium text-gray-800 px-6 py-4 text-left">
-                  Ingredients
+                  <div class="sort-container">
+                    <%= sort_link(column: "number_of_ingredients", label: "Ingredients") %>
+                    <%= show_sort_indicator_for("number_of_ingredients") %>
+                  </div>
                 </th>
                 <th
                   scope="col"
@@ -115,13 +118,11 @@
                     <%= r.category %>
                   </td>
                   <td class="px-6 py-4 whitespace-nowrap text-sm font-small text-gray-800">
-                    <div>
-                      <% r.ingredients.each do |ingredient| %>
-                        <div class="bg-cyan-100 text-center text-cyan-700 break-words">
-                          <%= ingredient %>
-                        </div>
+                    <ul class="list-disc pl-4">
+                      <% r.ingredients.split("|").each do |ingredient| %>
+                        <li class="text-cyan-700"><%= ingredient.strip %></li>
                       <% end %>
-                    </div>
+                    </ul>
                   </td>
                   <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-800">
                     <%= r.cook_time %>
@@ -146,7 +147,6 @@
     <div class="text-center py-10">
       <p class="text-lg font-medium text-gray-700">
         Hoah! No recipes found. Try adjusting your search! Watchout for typos.
-        Ingredients should be separated with white spaces.
       </p>
     </div>
   <% end %>

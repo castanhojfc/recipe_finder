@@ -8,7 +8,7 @@ class AddSearchFieldToRecipes < ActiveRecord::Migration[8.0]
         BEGIN
           NEW.searchable_lexemes := setweight(to_tsvector('english', coalesce(NEW.title, '')), 'A') ||
                                   setweight(to_tsvector('english', coalesce(NEW.category, '')), 'B') ||
-                                  setweight(to_tsvector('english', coalesce(array_to_string(NEW.ingredients, ' '), '')), 'C');
+                                  setweight(to_tsvector('english', coalesce(NEW.ingredients, '')), 'C');
           RETURN NEW;
         END;
       $$ LANGUAGE plpgsql;

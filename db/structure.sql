@@ -19,7 +19,7 @@ CREATE FUNCTION public.update_searchable_lexemes() RETURNS trigger
         BEGIN
           NEW.searchable_lexemes := setweight(to_tsvector('english', coalesce(NEW.title, '')), 'A') ||
                                   setweight(to_tsvector('english', coalesce(NEW.category, '')), 'B') ||
-                                  setweight(to_tsvector('english', coalesce(array_to_string(NEW.ingredients, ' '), '')), 'C');
+                                  setweight(to_tsvector('english', coalesce(NEW.ingredients, '')), 'C');
           RETURN NEW;
         END;
       $$;
@@ -50,7 +50,8 @@ CREATE TABLE public.recipes (
     title character varying,
     cook_time integer,
     prep_time integer,
-    ingredients character varying[] DEFAULT '{}'::character varying[],
+    ingredients character varying,
+    number_of_ingredients integer,
     ratings numeric,
     cuisine character varying,
     category character varying,
