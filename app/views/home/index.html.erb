@@ -1,12 +1,14 @@
+<%= turbo_refreshes_with method: :morph, scroll: :preserve %>
+
 <div class="flex px-4 py-4">
   <%= form_with url: root_path, method: :get, class: "flex w-full items-center space-x-2" do |form| %>
     <%= form.text_field :query,
-                    placeholder: "What do you have available at home? (ex: banana coffee bread...)",
+                    placeholder:
+                      "What do you have available at home? (ex: banana coffee bread...)",
                     class:
                       "flex-grow px-4 text-md border border-cyan-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 py-2" %>
     <%= form.submit "Submit",
-                class:
-                  "cursor-pointer bg-cyan-500 text-white px-4 py-2 rounded" %>
+                class: "cursor-pointer bg-cyan-500 text-white px-4 py-2 rounded" %>
     <%= button_to "Clear",
     root_path,
     method: :get,
@@ -25,37 +27,81 @@
                 <th scope="col" class="font-medium text-gray-800 px-6 py-4 text-left">
                   Image
                 </th>
-                <th scope="col" class="font-medium text-gray-800 px-6 py-4 text-left">
-                  Title
+                <th
+                  scope="col"
+                  class="
+                    text-gray-800 px-6 py-4 text-left font-medium hover:cursor-pointer
+                  "
+                >
+                  <div class="sort-container">
+                    <%= sort_link(column: "title", label: "Title") %>
+                    <%= show_sort_indicator_for("title") %>
+                  </div>
                 </th>
-                <th scope="col" class="font-medium text-gray-800 px-6 py-4 text-left">
-                  Category
+                <th
+                  scope="col"
+                  class="
+                    font-medium text-gray-800 px-6 py-4 text-left hover:cursor-pointer
+                  "
+                >
+                  <div class="sort-container">
+                    <%= sort_link(column: "category", label: "Category") %>
+                    <%= show_sort_indicator_for("category") %>
+                  </div>
                 </th>
                 <th scope="col" class="font-medium text-gray-800 px-6 py-4 text-left">
                   Ingredients
                 </th>
-                <th scope="col" class="font-medium text-gray-800 px-6 py-4 text-left">
-                  Cook time (min)
+                <th
+                  scope="col"
+                  class="
+                    font-medium text-gray-800 px-6 py-4 text-left hover:cursor-pointer
+                  "
+                >
+                  <div class="sort-container">
+                    <%= sort_link(column: "cook_time", label: "Cook Time (min)") %>
+                    <%= show_sort_indicator_for("cook_time") %>
+                  </div>
                 </th>
-                <th scope="col" class="font-medium text-gray-800 px-6 py-4 text-left">
-                  Preparation Time (min)
+                <th
+                  scope="col"
+                  class="
+                    font-medium text-gray-800 px-6 py-4 text-left hover:cursor-pointer
+                  "
+                >
+                  <div class="sort-container">
+                    <%= sort_link(column: "prep_time", label: "Prep Time (min)") %>
+                    <%= show_sort_indicator_for("prep_time") %>
+                  </div>
                 </th>
-                <th scope="col" class="font-medium text-gray-800 px-6 py-4 text-left">
-                  Ratings
+                <th
+                  scope="col"
+                  class="
+                    font-medium text-gray-800 px-6 py-4 text-left hover:cursor-pointer
+                  "
+                >
+                  <div class="sort-container">
+                    <%= sort_link(column: "ratings", label: "Ratings") %>
+                    <%= show_sort_indicator_for("ratings") %>
+                  </div>
                 </th>
-                <th scope="col" class="font-medium text-gray-800 px-6 py-4 text-left">
-                  Author
+                <th
+                  scope="col"
+                  class="
+                    font-medium text-gray-800 px-6 py-4 text-left hover:cursor-pointer
+                  "
+                >
+                  <div class="sort-container">
+                    <%= sort_link(column: "author", label: "Author") %>
+                    <%= show_sort_indicator_for("author") %>
+                  </div>
                 </th>
               </tr>
             </thead>
             <tbody>
               <% @recipes.each do |r| %>
                 <tr class="bg-gray-50 border-b">
-                  <td
-                    class="
-                      px-6 py-4 whitespace-nowrap font-medium text-gray-800 underline
-                    "
-                  >
+                  <td class=" px-6 py-4 whitespace-nowrap font-medium text-gray-800 underline ">
                     <%= if r.image.present?
                       image_tag(r.image, class: "max-w-[200px] max-h-[200px]")
                     else
@@ -77,16 +123,16 @@
                       <% end %>
                     </div>
                   </td>
-                  <td class="px-6 py-4 whitespace-nowrap  font-medium text-gray-800">
+                  <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-800">
                     <%= r.cook_time %>
                   </td>
-                  <td class="px-6 py-4 whitespace-nowrap  font-medium text-gray-800">
+                  <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-800">
                     <%= r.prep_time %>
                   </td>
-                  <td class="px-6 py-4 whitespace-nowrap  font-medium text-gray-800">
+                  <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-800">
                     <%= r.ratings %>
                   </td>
-                  <td class="px-6 py-4 whitespace-nowrap  font-medium text-gray-800">
+                  <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-800">
                     <%= r.author %>
                   </td>
                 </tr>

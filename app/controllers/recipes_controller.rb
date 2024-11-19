@@ -5,6 +5,6 @@ class RecipesController < ApplicationController
 
   # GET /recipes
   def index
-    @pagy, @recipes = pagy(RecipeRepository.search(params[:query]))
+    @pagy, @recipes = pagy(RecipeRepository.search(params[:query], params[:column], params[:direction]))
   end
 end
