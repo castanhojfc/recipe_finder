@@ -4,6 +4,7 @@
   <%= form_with url: root_path, method: :get, id: "search-form", class: "flex w-full items-center space-x-2" do |form| %>
     <%= form.text_field :query,
                     id: "query-field",
+                    value: params[:query],
                     placeholder:
                       "What do you have available at home? (ex: banana coffee bread...)",
                     class:
@@ -12,6 +13,7 @@
                 class: "cursor-pointer bg-cyan-500 text-white px-4 py-2 rounded" %>
     <%= button_to "Clear",
     root_path,
+    id: "clear-button",
     method: :get,
     class: "cursor-pointer bg-cyan-500 text-white px-4 py-2 rounded" %>
   <% end %>
@@ -165,12 +167,27 @@
 </div>
 
 <script>
-  function cleanQuery(query) {
-    return query.replace(/[[:punct:]]/g, ' ').replace(/\s+/g, ' ').trim();
-  }
-
   document.getElementById("search-form").addEventListener("submit", function(event) {
-    var queryField = document.getElementById("query-field");
-    queryField.value = cleanQuery(queryField.value);
+    let queryField = document.getElementById("query-field");
+    let cleanedQuery = queryField.value.replace(/[\s,./;:!?-]+/g, ' ').trim() // Remove common separators
+    queryField.value = cleanedQuery;
+
+    localStorage.setItem("query", cleanedQuery);
+  });
+
+  document.getElementById("clear-button").addEventListener("click", (event) => {
+    localStorage.setItem("query", "");
+
+    let queryField = document.getElementById("query-field")
+    queryField.value = "";
+
+    document.getElementById("search-form").submit();
+  });
+
+  window.addEventListener("load", () => {
+    query = localStorage.getItem("query");
+    let queryField = document.getElementById("query-field").value = query;
+
+    localStorage.removeItem("query", "");
   });
 </script>
