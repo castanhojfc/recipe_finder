@@ -1,8 +1,9 @@
 <%= turbo_refreshes_with method: :morph, scroll: :preserve %>
 
 <div class="flex px-4 py-4">
-  <%= form_with url: root_path, method: :get, class: "flex w-full items-center space-x-2" do |form| %>
+  <%= form_with url: root_path, method: :get, id: "search-form", class: "flex w-full items-center space-x-2" do |form| %>
     <%= form.text_field :query,
+                    id: "query-field",
                     placeholder:
                       "What do you have available at home? (ex: banana coffee bread...)",
                     class:
@@ -162,3 +163,14 @@
     </div>
   </div>
 </div>
+
+<script>
+  function cleanQuery(query) {
+    return query.replace(/[[:punct:]]/g, ' ').replace(/\s+/g, ' ').trim();
+  }
+
+  document.getElementById("search-form").addEventListener("submit", function(event) {
+    var queryField = document.getElementById("query-field");
+    queryField.value = cleanQuery(queryField.value);
+  });
+</script>
