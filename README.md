@@ -1,5 +1,85 @@
 # Recipe Finder
 
+## Hi there 👋 thank you for taking a look at my code!
+
+I'm Francisco Castanho and I will take this opportunity to leave as much details as possible to make going trough this work easier.
+
+The application is deployed [here](https://recipe-finder-blue-darkness-8237.fly.dev/).
+
+## What features are available?
+
+- When accessing the application the user will be presented with the firstly found recipes in the database.
+
+- They can type the ingredients they have at home in the search bar. Common separators like commas can be used in the query as they will be cleaned from it.
+
+- The user can either click *Submit*, to search for recipes that have those ingredients in the title, category and the ingredients list.
+
+- Or click *Clean* at any point to reset the search field and the recipes list.
+
+![Searching](docs/images/searching.png)
+
+- Recipes can be sorted and the fields supported are: Title, Category, Ingredients(Number of ingredients), Cook Time, Prep Time, Ratings and Author.
+
+![Sorting](docs/images/sorting.png)
+
+- Recipes are also paginated. Just lick on the numbered buttons to jump to a page. Or in the *<* *>* buttons to jump to the first and last pages respectively.
+
+![Pagination](docs/images/pagination.png)
+
+## 📖 User Stories
+
+*As a Cook, I want to type the ingredients I have available, so that I learn more recipes and know who made them and how they look like.*
+
+*As a Cook, I want to know the recipes with the highest rating, so that I can cook the best recipes.*
+
+*As a Cook, I want to know what recipes take the least ingredients, so that I can save money.*
+
+## 🧰 Approach
+
+The objective from the start was to provide the most value to the user as fast as possible. They will be paying us. To not introduce all the features in the world, but those that are should work very well. The components in the user interface should be intuitive and and the user should have easy access to what they want.
+
+The data was not split into multiple tables. It would complitate the process of accessing the data and relating it. This simplified the business logic while allowing the application to show the recipes that the user wants.
+
+Over-normalizing a database can hurt performance by creating too many tables and joins, leading to increased disk operations, network traffic, and memory usage. It can also weaken the effectiveness of indexes, caching, and partitioning, resulting in slower queries, higher resource consumption, and reduced scalability.
+
+This project uses GIN indexes and pg_search with a dynamically updated tsvector column for efficient full-text searches.
+
+This approach avoids slow linear database scans by leveraging advanced indexing but requires more disk space and memory.
+
+While this application doesn’t modify data, updates would be slower because the index nodes must be adjusted, and the tsvector is recalculated through a trigger.
+
+Other than that, the code should be simple enough to comment itself. 👍
+
+## 👷 Future work/Limitations
+
+- Support more languages besides english.
+- Allow typos in the search query.
+- More unit tests could have been written.
+- The application does not include any protection against malitious use (rate-limiting for example) other than what the dependencies provide.
+
+## How to run locally
+
+If `docker` and `docker-compose` are available. All that should be needed is to run:
+
+```bash
+docker-compose up
+```
+
+## Optionally, to run bare metal 🤘:
+
+1 - Ruby 3.3.6 is installed.
+
+2 - Postgres 16 is installed.
+
+3 - Environment variables in `.env` are loaded.
+
+From here run:
+
+```bash
+chmod a+x ./bin/* # ensure the scripts inside `/bin` have execution permissions
+bin/setup
+```
+
 ## Problem statement
 
 #### **_It's dinner time ! Create an application that helps users find the most relevant recipes that they can prepare with the ingredients that they have at home_**
@@ -17,11 +97,11 @@ Deliver a prototype web application to answer the above problem statement.
 
 ## Deliverable
 
-- [ ] The codebase: hosted on GitHub and shared with: @soyoh @sforsell @clemalfroy @dmilon @pointcom @evangelos-fotis @thecodehunter @gterral @sirdharma @maximilientyc @by-robots @NikosVlagoidis @toommz @foreverhungry @mandark97 @technoir9,
-- [ ] 2 or 3 user stories that address the statement in the repo's `README.md`,
-- [ ] The application accessible online (a personal server, fly.io or something else),
-- [ ] Submission of the above via [this form](https://forms.gle/siH7Rezuq2V1mUJGA),
-- [ ] If you're on Mac, make sure your browser has permission to share the screen.
+- [X] The codebase: hosted on GitHub and shared with: @soyoh @sforsell @clemalfroy @dmilon @pointcom @evangelos-fotis @thecodehunter @gterral @sirdharma @maximilientyc @by-robots @NikosVlagoidis @toommz @foreverhungry @mandark97 @technoir9,
+- [X] 2 or 3 user stories that address the statement in the repo's `README.md`,
+- [X] The application accessible online (a personal server, fly.io or something else),
+- [X] Submission of the above via [this form](https://forms.gle/siH7Rezuq2V1mUJGA),
+- [X] If you're on Mac, make sure your browser has permission to share the screen.
 
 
 ## Data
