@@ -83,4 +83,4 @@ end
 gem "pg_search", "~> 2.3"
 
 # Agnostic pagination in plain ruby. It does it all. Better. [https://github.com/ddnexus/pagy]
-gem "pagy", "~> 9.2"
+gem "pagy", "~> 9.3"
